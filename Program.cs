@@ -26,6 +26,39 @@
             Console.WriteLine("Despues de ordenar");
             MostrarTabla(tabla);
 
+            
+            ValorMinimoMaximo(tabla);
+            MediaAritmetrica(tabla);
+        }
+
+        private static void MediaAritmetrica(int[,] tabla)
+        {
+            
+        }
+
+        private static void ValorMinimoMaximo(int[,] tabla)
+        {
+           int minimo = tabla[0, 0];
+           int maximo = tabla[0, 0];
+
+            for(int fila = 0; fila < 3; fila++)
+            {
+                for(int columna = 0;columna < 2; columna++)
+                {
+                    if (tabla[fila, columna] < minimo)
+                    {
+                        minimo = tabla[fila, columna];
+                        
+                    }
+                    if (tabla[fila, columna] > maximo)
+                    {
+                        maximo = tabla[fila, columna];
+                       
+                    }
+                }
+            }
+            Console.WriteLine("Valor minimo: "+ minimo);
+            Console.WriteLine("Valor maximo: "+ maximo);
         }
 
         private static void ordenarColumnas(int[,] tabla)

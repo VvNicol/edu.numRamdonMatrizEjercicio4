@@ -33,7 +33,18 @@
 
         private static void MediaAritmetrica(int[,] tabla)
         {
-            
+            for(int fila = 0; fila < tabla.GetLength(0); fila++)
+    {
+                int suma = 0;
+
+                for (int columna = 0; columna < tabla.GetLength(1); columna++)
+                {
+                    suma += tabla[fila, columna];
+                }
+
+                double media = (double)suma / tabla.GetLength(1);
+                Console.WriteLine("La media aritmética de la fila " + (fila + 1) +" es " + (media));
+            }
         }
 
         private static void ValorMinimoMaximo(int[,] tabla)
